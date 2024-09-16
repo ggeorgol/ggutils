@@ -1,8 +1,7 @@
 ##### ============================================= #####
 #####               Custom R functions              #####
 #####    (c) Grigorios Georgolopoulos 2018-2020     #####
-#####  		   ggeorgol@altius.org		    #####
-#####      georgolopoulosggreg@hotmail.com 	    #####
+#####  		   georgolog@gmail.com		    #####
 ##### ============================================= #####
 
 ##### Split vector into specified chunks or lines; equivalent to unix split #####
@@ -259,8 +258,8 @@ if (rc == TRUE) {
 
 ##### Write BED formatted tables #####
 write.bed = function(x, file) {
-
-write.table(x, file = file, col.names = FALSE, row.names = FALSE, quote = FALSE, sep = '\t')
+x_ordered <- x[order(x[,1],x[,2],x[,3]),]
+write.table(x_ordered, file = file, col.names = FALSE, row.names = FALSE, quote = FALSE, sep = '\t')
 
 }
 
